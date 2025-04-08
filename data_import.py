@@ -1,4 +1,4 @@
-from flightradar24 import FlightRadar24API
+from FlightRadar24 import FlightRadar24API
 import pandas as pd
 import time
 import json
