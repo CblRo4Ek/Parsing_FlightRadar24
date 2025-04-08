@@ -15,25 +15,35 @@
 ### 1. Клонируйте или скачайте проект
 
 ```bash
-git clone <репозиторий>  # если есть
+git clone <репозиторий>  
 cd project_folder
 ```
 
-### 2. Создайте и активируйте виртуальное окружение
+### 2. Создайте виртуальное окружение
 
 ```bash
 python -m venv venv
-source venv/bin/activate      # на Linux/macOS
-venv\Scripts\activate         # на Windows
 ```
 
-### 3. Установите зависимости
+### 3. Активируйте виртуальное окружение
+
+* **Windows:**
+```bash
+venv\Scripts\activate
+```
+
+* **Linux/macOS:**
+```bash
+source venv/bin/activate
+```
+
+### 4. Установите зависимости
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Запустите основной скрипт
+### 5. Запустите основной скрипт
 
 ```bash
 python main.py
