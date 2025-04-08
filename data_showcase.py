@@ -29,21 +29,15 @@ def build_data_showcases():
     # Удалим пустые значения времени
     flights_df = flights_df.dropna(subset=["Datetime"])
 
-    # ================================
     # 1. Кол-во рейсов по авиакомпаниям за день
-    # ================================
     by_airline_day = flights_df.groupby(["Date", "Airline"]).size().reset_index(name="Flight Count")
     by_airline_day.to_csv("data/flights_by_airline_per_day.csv", index=False)
 
-    # ================================
     # 2. Кол-во рейсов по моделям самолётов за день
-    # ================================
     by_model_day = flights_df.groupby(["Date", "Aircraft Model"]).size().reset_index(name="Flight Count")
     by_model_day.to_csv("data/flights_by_model_per_day.csv", index=False)
 
-    # ================================
     # За каждый час — (Airline + Aircraft)
-    # ================================
     by_hour_airline = flights_df.groupby(["Date", "Hour", "Airline"]).size().reset_index(name="Flight Count")
     by_hour_model = flights_df.groupby(["Date", "Hour", "Aircraft Model"]).size().reset_index(name="Flight Count")
 
