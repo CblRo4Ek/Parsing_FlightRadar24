@@ -45,3 +45,8 @@ def build_data_showcases():
     by_hour_model.to_csv("data/lights_by_model_per_hour.csv", index=False)
 
     print("Витрины созданы")
+
+
+if __name__ == "__main__":
+    build_data_showcases()
+    
