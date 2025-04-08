@@ -80,3 +80,7 @@ def fetch_flight_data():
         json.dump(trail_data, f, ensure_ascii=False, indent=2)
 
     print("Данные сохранены")
+
+
+if __name__ == "__main__":
+    fetch_flight_data()
