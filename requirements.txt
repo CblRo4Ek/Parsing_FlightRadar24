@@ -1,2 +1,5 @@
 flightradarapi==1.3.34
 pandas==2.2.2
+folium==0.19.5
+streamlit==1.44.1
+streamlit-folium==0.24.0
