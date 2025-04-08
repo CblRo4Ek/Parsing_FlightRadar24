@@ -15,8 +15,8 @@
 ### 1. Клонируйте или скачайте проект
 
 ```bash
-git clone <репозиторий>  
-cd project_folder
+git clone https://...
+cd Parsing_FlightRadar24
 ```
 
 ### 2. Создайте виртуальное окружение
