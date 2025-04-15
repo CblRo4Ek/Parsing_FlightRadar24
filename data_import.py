@@ -7,7 +7,11 @@ import os
 
 def fetch_flight_data():
     api = FlightRadar24API()
-    bounds = "47.5,41.0,27.0,42.5"
+    bounds = "47.5,41.0,27.0,42.5"  
+    # 47.5 — северная граница (максимальная широта)
+    # 41.0 — южная граница (минимальная широта)
+    # 27.0 — западная граница (минимальная долгота)
+    # 42.5 — восточная граница (максимальная долгота)
 
     flights = api.get_flights(bounds=bounds)
 
@@ -18,6 +22,42 @@ def fetch_flight_data():
         try:
             # Получаем подробную информацию о рейсе
             flight_details = api.get_flight_details(flight)
+
+            # {
+            #   "identification": {
+            #     "callsign": "UBD431",
+            #     ...
+            #   },
+            #   "aircraft": {
+            #     "model": { "text": "Airbus A320-232" },
+            #     "hex": "4520eb",  # ICAO-код
+            #     ...
+            #   },
+            #   "airline": {
+            #     "name": "UR Airlines",
+            #     ...
+            #   },
+            #   "airport": {
+            #     "origin": {
+            #       "code": { "iata": "EBL", "icao": "UUEE" },
+            #       ...
+            #     },
+            #     "destination": {
+            #       "code": { "iata": "CPH", "icao": "LTBA" },
+            #       ...
+            #     }
+            #   },
+            #   "trail": [
+            #     {
+            #       "lat": 43.9,
+            #       "lng": 27.06,
+            #       "alt": 10500,     # Высота
+            #       "ts": 1744137048  # Время точки
+            #     },
+            #     ...
+            #   ],
+            #   ...
+            # }
 
             # Работает как словарь
             identification = flight_details.get("identification", {})
